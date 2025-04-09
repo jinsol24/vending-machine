@@ -41,7 +41,6 @@ private:
     Ui::Widget *ui;
 
     void updateButtons();              // 버튼 상태 업데이트
-    //QString calculateChange(int money); // 잔돈 문자열 생성
-    static QString calculateChange(money);
+    static QString calculateChange(int money); // 잔돈 문자열 생성
 };
 #endif // WIDGET_H
