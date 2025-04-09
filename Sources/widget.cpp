@@ -16,6 +16,7 @@ Widget::~Widget()
     delete ui;
 }
 
+// [조언] 500원 추가가
 // 버튼 상태 업데이트
 void Widget::updateButtons() {
     ui->pbTea->setEnabled(money >= 150);
@@ -34,54 +35,12 @@ void Widget::changeMoney(int diff) {
 
 // 잔돈 반환 멘트 생성
 QString Widget::calculateChange(int money) {
-    int coin100 = money / 100;
-    money %= 100;
-    int coin50 = money / 50;
-    money %= 50;
-    int coin10 = money / 10;
-    money %= 10;
-
-    return QString("100원 %1개, 50원 %2개, 10원 %3개 반환됩니다.")
-        .arg(coin100)
-        .arg(coin50)
-        .arg(coin10);
-}
-
-void Widget::on_pb10_clicked()
-{
-    changeMoney(10);
-}
-
-void Widget::on_pb50_clicked()
-{
-    changeMoney(50);
-}
-
-void Widget::on_pb100_clicked()
-{
-    changeMoney(100);
-}
-
-void Widget::on_pb500_clicked()
-{
-    changeMoney(500);
-}
-
-void Widget::on_pbReset_clicked()
-{
-    QMessageBox::information(this, "잔돈 반환", calculateChange(money));
-    money = 0;
-    ui->lcdNumber->display(money);
-    updateButtons();
-}
-
-void Widget::on_pbTea_clicked()
-{
-    if(money >= 150) {
-        changeMoney(-150);
-    } else {
-        QMessageBox::warning(this, "경고", "잔액이 부족합니다.");
-    }
+ 기
+    // if(money >= 150) {
+    //     changeMoney(-150);
+    // } else {
+    //     QMessageBox::warning(this, "경고", "잔액이 부족합니다.");
+    // }
 }
 
 void Widget::on_pbJuice_clicked()
